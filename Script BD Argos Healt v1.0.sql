@@ -6,7 +6,7 @@ create table login(
 	idLogin int primary key,
 	login varchar(10),
     senha varchar(20),
-    tipoAcesso char(3) not null check (situacao in ('adm', 'cli')),
+    tipoAcesso enum ('adm', 'cli') not null,
 	constraint unique_login unique(login)
 );
 
@@ -14,7 +14,7 @@ create table exercicioPessoa(
 	idExercicoPessoa int primary key,
     series int(1),
     repeticoes int(1),
-    carga varchar(10) not null check (peso in('leve', 'medio', 'pesado')),
+    carga enum ('leve', 'medio', 'pesado') not null,
     intervalo time not null
 );
 
