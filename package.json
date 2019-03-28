@@ -1,16 +1,18 @@
 {
-  "name": "devteste",
+  "name": "argoshealth",
   "version": "1.0.0",
   "description": "Criacao de aplicacao para aula de pwa",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Keila",
+  "author": "Argos Club",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "consign": "^0.1.6",
     "ejs": "^2.6.1",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
   }
 }
