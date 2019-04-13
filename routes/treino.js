@@ -4,4 +4,8 @@ module.exports = function (application) {
         res.render('treino/exercicios');
 
     });
+
+    application.post('/insereTreino', function(res, req){
+        application.controllers.treino.insertTreino(application, req, res);
+    })
 }

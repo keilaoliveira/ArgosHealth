@@ -24,7 +24,7 @@ create table pessoa(
     dtNascimento varchar(10) not null,
     numCelular varchar(11) not null,
     peso double not null,
-    altura int(3) not null
+    altura int(3) not null,
     email varchar(50) not null,
     senha varchar(20) not null
 );
