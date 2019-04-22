@@ -1,8 +1,7 @@
-var mysql = require('mysql');
+var mysqlConnect = require('mysql');
 
-var conexaoMYSQL = function () {
-
-    return connection = mysql.createConnection({
+var conexaoMysql = function () {
+    return mysqlConnect.createConnection({
         host: 'localhost',
         user: 'root',
         password: '',
@@ -11,6 +10,6 @@ var conexaoMYSQL = function () {
 }
 
 module.exports = function () {
-
-    return conexaoMYSQL;
+    console.log('Banco conectado');
+    return conexaoMysql;
 }

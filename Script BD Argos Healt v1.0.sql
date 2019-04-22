@@ -2,39 +2,41 @@ create database argoshealth;
 
 use argoshealth;
 
-create table login(
-	idLogin int primary key,
-	login varchar(10),
-    senha varchar(20),
-    tipoAcesso enum ('adm', 'cli') not null,
-	constraint unique_login unique(login)
-);
+-- create table login(
+-- 	idLogin int primary key auto_increment,
+-- 	login varchar(10) not null,
+--     senha varchar(20) not null,
+--     tipoAcesso enum ('adm', 'cli') not null,
+-- 	constraint unique_login unique(login)
+-- );
 
 create table exercicioPessoa(
-	idExercicoPessoa int primary key,
-    series int(1),
-    repeticoes int(1),
+	idExercicoPessoa int primary key auto_increment,
+    series int(1) not null,
+    repeticoes int(1) not null,
     carga enum ('leve', 'medio', 'pesado') not null,
-    intervalo time not null
+    intervalo varchar(10) not null
 );
 
 create table pessoa(
-	idPessoa int primary key,
+	idPessoa int primary key auto_increment,
     nomePessoa varchar(50) not null,
     dtNascimento varchar(10) not null,
     numCelular varchar(11) not null,
-    peso float(6,3) not null,
-    altura float(4,3) not null
+    peso double not null,
+    altura int(3) not null,
+    email varchar(50) not null,
+    senha varchar(20) not null
 );
 
 create table refeicaoPessoa(
-	idRefeicaoPessoa int primary key,
+	idRefeicaoPessoa int primary key auto_increment,
     quantidade int not null,
-    dtConsumo date not null
+    dtConsumo varchar(10) not null
 );
 
 create table alimento(
-	idAlimento int primary key,
+	idAlimento int primary key auto_increment,
     descricao varchar(45) not null,
     calorias int(3) not null,
     carboidratos int(3) not null,
@@ -43,22 +45,22 @@ create table alimento(
 );
 
 create table horaAgua(
-	idHoraAgua int primary key,
-    horario time
+	idHoraAgua int primary key auto_increment,
+    horario varchar(10) not null
 );
 
 create table qtdAgua(
-	idQtdAgua int primary key,
+	idQtdAgua int primary key auto_increment,
     ml int(4)
 );
 
 create table agua(
-	idAgua int primary key,
-    dtConsumo date
+	idAgua int primary key auto_increment,
+    dtConsumo varchar(10) not null
 );
 
 create table exercicio(
-	idExercicio int primary key,
+	idExercicio int primary key auto_increment,
     descricao varchar(45) not null
 );
 

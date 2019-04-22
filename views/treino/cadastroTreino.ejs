@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="/insereTreino">
+        <label>Escolha o treino:</label><br>
+         <div>
+            <select name="exercicio" id="ex">
+               <option value="corrida">Corrida</option>
+               <option value="flexao">Flexão</option>
+            </select>
+         </div> <br><br>
+         <label>Quantas séries?</label><br>
+         <input type="number" name="series"><br><br>
+         <label>Quantas repetições?</label><br>
+         <input type="number" name="repeticoes"><br><br>
+         <label>Qual o nível do treino?</label><br>
+         <div>
+            <input type="radio" id="leve" name="carga" value="leve">
+            <label for="leve">Leve</label>
+         </div>
+         <div>
+            <input type="radio" id="medio" name="carga" value="medio">
+            <label for="medio">Médio</label>
+         </div>
+         <div>
+            <input type="radio" id="pesado" name="carga" value="pesado">
+            <label for="pesado">Pesado</label>
+         </div>
+         <label>Qual o intervalo entre as séries?</label><br>
+         <input type="text" name="intervalo">
+         <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>
