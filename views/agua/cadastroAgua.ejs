@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="ingestao.ejs">
+        <label>Escolha o horário para consumo:</label><br>
+        <select name="agua" id="horario">
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+        </select>
+        <br><br>
+        <label>Escolha o horário para consumo:</label><br>
+        <select name="agua" id="qtd">
+            <option value="100">100ml</option>
+            <option value="200">200ml</option>
+            <option value="300">300ml</option>
+            <option value="400">400ml</option>
+            <option value="500">500ml</option>
+        </select>
+        <br><br>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <br><br>
+</body>
+</html>
