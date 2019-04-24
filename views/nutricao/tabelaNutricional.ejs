@@ -8,6 +8,31 @@
 </head>
 <body>
     <h1>Tabela Nutricional</h1>
-    <!--Adicionar dados do Banco-->
+    <table>
+        <thead>
+            <th>ID Alimento</th>
+            <th>Alimento</th>
+            <th>Calorias</th>
+            <th>Carboidratos</th>
+            <th>Proteinas</th>
+            <th>Gordura</th>
+            <tbody>
+                <%
+                    for(var i=0; i < dados.length; i++){
+                %>
+                <tr>
+                    <td><%= dados[i].idAlimento %></td>
+                    <td><%= dados[i].descricao %></td>
+                    <td><%= dados[i].calorias %></td>
+                    <td><%= dados[i].carboidratos %></td>
+                    <td><%= dados[i].proteinas %></td>
+                    <td><%= dados[i].gordura %></td>
+                </tr>
+                <%
+                    }
+                %>
+            </tbody>
+        </thead>
+    </table>
 </body>
 </html>
