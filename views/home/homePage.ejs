@@ -1,18 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <script src="models/usuario.js"></script>
-    <title>Pagina Inicial</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <title>Argos Health</title>
 </head>
+
 <body>
-    <a href="/treino">Treino</a>
-    <a href="/nutricao">Tabela Nutricional</a>
-    <a href="">Desempenho</a><br>
-    <a href="/metas">Metas</a>
-    <a href="/agua">Ingestão Água</a>
-    <a href="">Configuração</a>
-    </body>
+    <div class="menuSuperior">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/metas">Metas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/agua">Água</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Sair</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col imgMeta ">
+                <img src="/img/metaDiaria.jpg" class="img-fluid imgMetaRadius" />
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row marginHome">
+            <div class="col">
+                    <a href="/treino"> <img src="/img/teste.png" /> </a>
+               <!--  <a href="/treino">Treino</a><br />-->
+            </div>
+            <div class="col">
+                <a href="/nutricao"> <img src="/img/TabelaNutricional.png" /> </a>
+            </div>
+        </div>
+
+        <div class="row marginHome">
+                <div class="col">
+                        <a href="/agua"> <img src="/img/Agua.png" /> </a><br />
+                    </div>
+            <div class="col">
+                <a href="/metas"> <img src="/img/Metas.png" /> </a><br />
+            </div>
+        </div>
+    </div>
+
+</body>
+
 </html>

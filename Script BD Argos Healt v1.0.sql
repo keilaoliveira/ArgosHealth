@@ -64,26 +64,32 @@ create table exercicio(
     descricao varchar(45) not null
 );
 
-alter table login add f_idPessoa int;
-alter table login add constraint fkLoginPessoa foreign key (f_idPessoa) references pessoa(idPessoa);
+--alter table login add f_idPessoa int;
+--alter table login add constraint fkLoginPessoa foreign key (f_idPessoa) references pessoa(idPessoa);
 
 alter table exercicioPessoa add f_idPessoa int;
-alter table exercicioPessoa add constraint fkExercicioPessoaPessoa foreign key (f_idPessoa) references pessoa(idPessoa);
+--alter table exercicioPessoa add constraint fkExercicioPessoaPessoa foreign key (f_idPessoa) references pessoa(idPessoa);
 
 alter table exercicioPessoa add f_idExercicio int;
-alter table exercicioPessoa add constraint fkExercicioPessoaExercicio foreign key (f_idExercicio) references exercicio(idExercicio);
+--alter table exercicioPessoa add constraint fkExercicioPessoaExercicio foreign key (f_idExercicio) references exercicio(idExercicio);
 
 alter table refeicaoPessoa add f_idPessoa int;
-alter table refeicaoPessoa add constraint fkRefeicaoPessoaPessoa foreign key (f_idPessoa) references pessoa(idPessoa);
+--alter table refeicaoPessoa add constraint fkRefeicaoPessoaPessoa foreign key (f_idPessoa) references pessoa(idPessoa);
 
 alter table refeicaoPessoa add f_idAlimento int;
-alter table refeicaoPessoa add constraint fkRefeicaoPEssoaAlimento foreign key (f_idPessoa) references alimento(idAlimento);
+--alter table refeicaoPessoa add constraint fkRefeicaoPEssoaAlimento foreign key (f_idPessoa) references alimento(idAlimento);
 
 alter table agua add f_idHoraAgua int;
-alter table agua add constraint fkAguaHoraAgua foreign key (f_idHoraAgua) references horaAgua(idHoraAgua);
+--alter table agua add constraint fkAguaHoraAgua foreign key (f_idHoraAgua) references horaAgua(idHoraAgua);
 
 alter table agua add f_idQtdAgua int;
-alter table agua add constraint fkAguaQtdAgua foreign key (f_idQtdAgua) references qtdAgua(idQtdAgua);
+--alter table agua add constraint fkAguaQtdAgua foreign key (f_idQtdAgua) references qtdAgua(idQtdAgua);
 
 alter table agua add f_idPessoa int;
-alter table agua add constraint fkAguaPessoa foreign key (f_idPessoa) references pessoa(idPessoa);
+--alter table agua add constraint fkAguaPessoa foreign key (f_idPessoa) references pessoa(idPessoa);
+
+--Dados Iniciais
+insert into alimento values(1, 'Brigadeiro', 300, 10, 12, 120);
+insert into alimento values(2, 'Pão Francês', 150, 29, 4, 1);
+insert into alimento values(4, 'Leite', 99, 7, 5, 5);
+insert into alimento values(3, 'Mussarela', 63, 0, 4, 4);

@@ -1,35 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
     <title>Document</title>
 </head>
+
 <body>
-    <form method="POST" action="/insereUsuario">
-        <label>Nome</label><br>
-        <input type="text" name="nomePessoa">
-        <br><br>
-        <label>Data de Nascimento</label><br>
-        <input type="text" name="dtNascimento">
-        <br><br>
-        <label>Numero de Celular</label><br>
-        <input type="text" name="numCelular">
-        <br><br>
-        <label>Peso</label><br>
-        <input type="text" name="peso">
-        <br><br>
-        <label>Altura</label><br>
-        <input type="text" name="altura">
-        <br><br>
-        <label>Email</label><br>
-        <input type="text" name="email">
-        <br><br>
-        <label>Senha</label><br>
-        <input type="password" name="senha">
-        <br><br>
-        <button type="submit">Cadastrar</button>
-    </form>
+
+    <div class="menuSuperior">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="/"> <img src="/img/menuLogin.png" class="img-fluid imgCenter imgMenu" /> </a>
+            </li>
+        </ul>
+    </div>
+    <br />
+    <div class="container">
+        <img src="/img/Logo_Argos.png" class="img-fluid imgCenter" />
+        <br />
+        <i> Seja muito bem vindo!</i>
+        <i> Venha fazer parte do nosso clube e adquirir hábitos mais saudáveis!</i>
+        <br /><br />
+
+        <div class="row">
+            <div class="col">
+                <form method="POST" action="/insereUsuario" class="textCenter">
+                    <label>Nome</label><br>
+                    <input type="text" name="nomePessoa">
+                    <br><br>
+                    <label>Data de Nascimento</label><br>
+                    <input type="text" name="dtNascimento">
+                    <br><br>
+                    <label>Numero de Celular</label><br>
+                    <input type="text" name="numCelular">
+                    <br><br>
+                    <label>Peso</label><br>
+                    <input type="text" name="peso">
+                    <br><br>
+                    <label>Altura</label><br>
+                    <input type="text" name="altura">
+                    <br><br>
+                    <label>Email</label><br>
+                    <input type="text" name="email">
+                    <br><br>
+                    <label>Senha</label><br>
+                    <input type="password" name="senha">
+                    <br /><br />
+                    <button type="submit">Cadastrar</button>
+                </form>
+                <br /><br />
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

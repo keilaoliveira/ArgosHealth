@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
     <title>Tabela de Nutrição</title>
 </head>
+
 <body>
-    <h1>Tabela Nutricional</h1>
-    <table>
-        <thead>
+    <div class="menuSuperior">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/metas">Metas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="$">Água</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/config">Configuração</a>
+            </li>
+        </ul>
+    </div>
+    <br />
+    <div class="container">
+        <h2>Tabela Nutricional</h2>
+
+        <img src="/img/tabela.png" class="img-fluid imgCenter imgTabela" />
+
+        <table>
+            <thead>
             <tbody>
                 <%
                     for(var i=0; i < dados.length; i++){
@@ -18,16 +43,18 @@
                     <td><%= dados[i].descricao %></td>
                 </tr>
                 <tr>
-                <td><%= dados[i].calorias %><label>  kcal  /</label></td>
-                    <td><%= dados[i].carboidratos %><label>g  carb  /</label></td>
-                    <td><%= dados[i].proteinas %><label>g  prot  /</label></td>
-                    <td><%= dados[i].gordura %><label>g  gord</label></td>
+                    <td><%= dados[i].calorias %><label> kcal /</label></td>
+                    <td><%= dados[i].carboidratos %><label>g carb /</label></td>
+                    <td><%= dados[i].proteinas %><label>g prot /</label></td>
+                    <td><%= dados[i].gordura %><label>g gord</label></td>
                 </tr>
                 <%
                     }
                 %>
             </tbody>
-        </thead>
-    </table>
+            </thead>
+        </table>
+    </div>
 </body>
+
 </html>
