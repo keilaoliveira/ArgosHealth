@@ -13,6 +13,7 @@
     <script src="jwRegister.js"></script>
 
     <title>Argos Health</title>
+
 </head>
 
 <body>
@@ -25,24 +26,25 @@
     </form>
         <input type="submit" name="btnCriarConta" value="Criar Conta">
 -->
-<script>
-function Login() {
-    var done = 0;
-    var usuario = document.getElementsByName('txtLogin')[0].value;
-    usuario = usuario.toLowerCase();
-    var senha = document.getElementsByName('txtSenha')[0].value;
-    senha = senha.toLowerCase();
-  
-    if (usuario == "abc" && senha == "123") {
-      window.location.href = "/home";
-      done = 1;
-    }
-    if (done == 0) {
-      alert("Dados incorretos, tente novamente!");
-  
-    }
-  }
-  </script>
+    <script>
+        function Login() {
+            var done = 0;
+            var usuario = document.getElementsByName('txtLogin')[0].value;
+            usuario = usuario.toLowerCase();
+            var senha = document.getElementsByName('txtSenha')[0].value;
+            senha = senha.toLowerCase();
+
+            if (usuario == "abc" && senha == "123") {
+                res.redirect('/home');
+                done = 1;
+            }
+            if (done == 0) {
+                alert("Dados incorretos, tente novamente!");
+
+            }
+        }
+    </script>
+
 
     <div class="limiter">
         <div class="container-login100">
@@ -69,13 +71,15 @@ function Login() {
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
-                          
+                            <!--
                             <button class="login100-form-btn" onclick="window.location.href='/home'">
                                 Entrar
-                            </button>
+                            </button>-->
+                            <input class="login100-form-btn" type="submit" name="btnLogar" onclick="Login()" value="Logar">
                         </div>
                     </div>
 
+                    <input>
                     <div class="text-center p-t-115">
                         <span class="txt1">
                             Não tem um perfil cadastrado?
