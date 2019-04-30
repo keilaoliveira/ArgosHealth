@@ -4,7 +4,7 @@ module.exports.exibirNutricao = function(application, req, res){
 
     nutricaoD.viewNutricao(function(error, resultado){
         if(error) res.send(error);
-        res.render('nutricao/tabelaNutricional',{dados : resultado})
-        console.log("Ae carai");
+        res.render('nutricao/tabelaNutricional',{dados : resultado});
+
     })
 }
