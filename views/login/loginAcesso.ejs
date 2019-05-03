@@ -28,21 +28,27 @@
 -->
     <script>
         function Login() {
-            var done = 0;
+            //var done = 0;
             var usuario = document.getElementsByName('txtLogin')[0].value;
             usuario = usuario.toLowerCase();
             var senha = document.getElementsByName('txtSenha')[0].value;
             senha = senha.toLowerCase();
 
-            // alert(usuario+" "+senha);
-
-            if (usuario == "abc" && senha == "123") {
-                location.href = "/home";
-                done = 1;
-            }
-            if (done == 0) {
-                alert("Dados incorretos, tente novamente!");
-
+            if (usuario == "" || senha == ""){
+                alert("Preencha os campos corretamente!")
+            } else{
+                <%
+                    for (var i =0; i < dados.length; i++){
+                %>
+                    if ((usuario == "<%=dados[i].email%>") && (senha == "<%=dados[i].senha%>")){
+                        location.href = "gravarSessao/<%= dados[i].idPessoa %>"
+                        location.href = "/home"
+                    } else {
+                        alert("Login ou senha invalidos")
+                    }
+                <%
+                }
+                %>
             }
         }
     </script>
