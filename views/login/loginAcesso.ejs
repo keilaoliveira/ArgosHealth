@@ -26,7 +26,7 @@
     </form>
         <input type="submit" name="btnCriarConta" value="Criar Conta">
 -->
-    <script>
+    <script language="JavaScript" type="text/javascript">
         function Login() {
             //var done = 0;
             var usuario = document.getElementsByName('txtLogin')[0].value;
@@ -40,11 +40,12 @@
                 <%
                     for (var i =0; i < dados.length; i++){
                 %>
+                
                     if ((usuario == "<%=dados[i].email%>") && (senha == "<%=dados[i].senha%>")){
                         location.href = "gravarSessao/<%= dados[i].idPessoa %>"
                         location.href = "/home"
                     } else {
-                        alert("Login ou senha invalidos")
+                        alert("Login ou senha inválidos")
                     }
                 <%
                 }
