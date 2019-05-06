@@ -17,48 +17,13 @@
 </head>
 
 <body>
-    <!-- 
-    <form action="" method="">
-        <input type="text" name="txtLogin" placeholder="Login"><br><br>
-        <input type="password" name="txtSenha" placeholder="Senha"><br><br>
-        <input type="button" name="btnentrar" value="Entrar" onclick="window.location.href='/home'">
-        <input type="reset" name="btnCancelar" value="Cancelar"><br><br><br><br>
-    </form>
-        <input type="submit" name="btnCriarConta" value="Criar Conta">
--->
-    <script language="JavaScript" type="text/javascript">
-        function Login() {
-            //var done = 0;
-            var usuario = document.getElementsByName('txtLogin')[0].value;
-            usuario = usuario.toLowerCase();
-            var senha = document.getElementsByName('txtSenha')[0].value;
-            senha = senha.toLowerCase();
-
-            if (usuario == "" || senha == ""){
-                alert("Preencha os campos corretamente!")
-            } else{
-                <%
-                    for (var i =0; i < dados.length; i++){
-                %>
-                
-                    if ((usuario == "<%=dados[i].email%>") && (senha == "<%=dados[i].senha%>")){
-                        location.href = "gravarSessao/<%= dados[i].idPessoa %>"
-                        location.href = "/home"
-                    } else {
-                        alert("Login ou senha inválidos")
-                    }
-                <%
-                }
-                %>
-            }
-        }
-    </script>
+   
 
 
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-                <form class="login100-form validate-form">
+                <form class="login100-form validate-form" method="POST" action="/gravaSessao">
                     <span class="login100-form-title p-b-48">
                         <img src="img/Logo_Argos.png" class="img-fluid">
                     </span>
@@ -84,7 +49,7 @@
                             <button class="login100-form-btn" onclick="window.location.href='/home'">
                                 Entrar
                             </button>-->
-                            <input class="login100-form-btn" type="button" name="btnLogar" onclick="Login()" value="Logar">
+                            <input class="login100-form-btn" type="submit" name="btnLogar" value="Logar">
                         </div>
                     </div>
 
