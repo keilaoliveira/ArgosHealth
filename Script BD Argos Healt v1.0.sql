@@ -12,10 +12,12 @@ use argoshealth;
 
 create table exercicioPessoa(
 	idExercicoPessoa int primary key auto_increment,
-    series int(1) not null,
-    repeticoes int(1) not null,
+    exercicio varchar(30) not null,
+    series int(2) not null,
+    repeticoes int(2) not null,
     carga enum ('leve', 'medio', 'pesado') not null,
-    intervalo varchar(10) not null
+    intervalo varchar(10) not null,
+    idPessoa varchar(50)
 );
 
 create table pessoa(
