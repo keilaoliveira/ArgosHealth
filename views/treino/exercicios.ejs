@@ -9,5 +9,27 @@
     <!--Adicionar informações do banco-->
 
     <a href="/cadastrarTreino">Inserir Treino</a>
+
+    <table>
+        <thead>
+            <tbody>
+                <%
+                    for(var i=0; i < data.length; i++){
+                %>
+                <tr>
+                    <td><%= data[i].exercicio %></td>
+                </tr>
+                <tr>
+                    <td><%= data[i].series %></td>
+                    <td><%= data[i].repeticoes %></td>
+                    <td><%= data[i].carga %></td>
+                    <td><%= data[i].intervalo %></td>
+                </tr>
+                <%
+                    }
+                %>
+            </tbody>
+        </thead>
+    </table>
 </body>
 </html>

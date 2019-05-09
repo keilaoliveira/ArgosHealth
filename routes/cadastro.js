@@ -4,4 +4,8 @@ module.exports = function (application) {
         res.render('cadastro/cadastroUsuario');
 
     });
+
+    application.post('/insereUsuario', function (req, res){
+        application.controllers.usuario.insertUsuario(application, req, res);
+    });
 }

@@ -5,7 +5,6 @@ module.exports = function (application) {
     });
 
     application.post('/gravaSessao', function(req, res){
-        console.log("Ae carai")
         application.controllers.login.validaLogin(application, req, res)
     })
 

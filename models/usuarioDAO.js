@@ -3,7 +3,7 @@ function usuarioDAO(conexao){
 }
 
 usuarioDAO.prototype.inserirUsuario = function(dados){
-    this._conexao.query('insert into pessoa set ?', dados);
+        this._conexao.query('insert into pessoa set ?', dados);
 }
 
 module.exports = function(){

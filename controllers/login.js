@@ -2,8 +2,6 @@ module.exports.validaLogin = function(application, req, res){
     
     var usuario = req.body.txtLogin;
     var senha = req.body.txtSenha;
-
-    console.log(usuario+" "+senha);
     var conexao = application.servidor.connectionMysql;
     var loginD = new application.models.loginDAO(conexao);
     

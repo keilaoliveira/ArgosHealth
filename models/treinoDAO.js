@@ -1,13 +1,17 @@
-function treinoDAO(conexao){
+function treinoDAO(conexao, userLog){
     this._conexao = conexao();
+    //this.userLog
 }
 
-treinoDAO.prototype.inserirTreino = function(dados){
-    this._conexao.query('insert into exerciciopessoa set ?', dados);
+treinoDAO.prototype.inserirTreino = function(dados, userLog){
+    //console.log(dados.exercicio+','+dados.series+','+dados.repeticoes+','+dados.carga+','+dados.intervalo+','+userLog);
+    this._conexao.query('insert into exerciciopessoa(exercicio, series, repeticoes, carga,intervalo, idPessoa)'+
+        'values("'+dados.exercicio+'",'+dados.series+','+dados.repeticoes+',"'+
+        dados.carga+'","'+dados.intervalo+'","'+userLog+'")');
 }
 
-treinoDAO.prototype.selecionarTreino = function(callback){
-    this._conexao.query('select descricao from exercicio', callback);
+treinoDAO.prototype.selecionarTreino = function(callback, userLog){
+    this._conexao.query('select * from exerciciopessoa where idPessoa = "'+userLog+'";', callback);
 }
 
 module.exports = function(){
