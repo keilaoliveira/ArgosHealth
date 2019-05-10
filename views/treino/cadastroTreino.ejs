@@ -1,40 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="css/home.css">
+   <title>Document</title>
+
+   <div class="menuSuperior">
+         <ul class="nav nav-pills">
+            <li class="nav-item">
+               <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link active" href="#">Metas</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="/agua">Água</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="/treino">Treino</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="/">Sair</a>
+            </li>
+         </ul>
+      </div>
+
 </head>
+
 <body>
-      
-    <form method="POST" action="/insereTreino">
-        <label>Escolha o treino:</label><br>
-        <select name="exercicio" id="ex">
-            <option value="corrida">Corrida</option>
-            <option value="flexao">Flexão</option>
-         </select>
-         <br><br>
-         <label>Quantas séries?</label><br>
-         <input type="number" name="series"><br><br>
-         <label>Quantas repetições?</label><br>
-         <input type="number" name="repeticoes"><br><br>
-         <label>Qual o nível do treino?</label><br>
-         <div>
-            <input type="radio" id="tLeve" name="carga" value="leve">
-            <label for="tLeve">Leve</label>
+   <br />
+   <div class="container">
+      <div class="row">
+         <div class="col">
+            <h5 class="centralizando">Informe os dados do treino:</h5><br>
+
+            <form method="POST" action="/insereTreino">
+               <div class="centralizando">
+               <label>Tipo de Treino: </label><br>
+               <select name="exercicio" id="ex">
+                  <option selected="true" disabled="disabled">...</option>
+                  <option value="Corrida">Corrida</option>
+                  <option value="Flexao">Flexão</option>
+               </select>
+               <br><br>
+               <label>Quantidade de Séries: </label><br>
+               <input type="number" name="series"><br><br>
+               <label>Quantidade de repetições: </label><br>
+               <input type="number" name="repeticoes"><br><br>
+               <label>Nível do Treino: </label><br>
+               <div>
+                  <input type="radio" id="tLeve" name="carga" value="leve">
+                  <label for="tLeve">Leve</label>
+               </div>
+               <div>
+                  <input type="radio" id="tMedio" name="carga" value="medio">
+                  <label for="tMedio">Médio</label>
+               </div>
+               <div>
+                  <input type="radio" id="tPesado" name="carga" value="pesado">
+                  <label for="tPesado">Pesado</label>
+               </div>
+               <label>Intervalo entre as séries: </label><br>
+               <select name="intervalo" id="inte">
+                  <option selected="true" disabled="disabled">...</option>
+                  <option value="30 Seg">30 Segundos</option>
+                  <option value="1 Min">1 Minuto</option>
+                  <option value="2 Min">2 Minutos</option>
+               </select>
+               <br /><br />
+               <button type="submit" class="botaoCadastrar">Cadastrar</button></div>
+            </form>
+
          </div>
-         <div>
-            <input type="radio" id="tMedio" name="carga" value="medio">
-            <label for="tMedio">Médio</label>
-         </div>
-         <div>
-            <input type="radio" id="tPesado" name="carga" value="pesado">
-            <label for="tPesado">Pesado</label>
-         </div>
-         <label>Qual o intervalo entre as séries?</label><br>
-         <input type="text" name="intervalo">
-         <button type="submit">Cadastrar</button>
-    </form>
+      </div>
+   </div>
 </body>
+
 </html>

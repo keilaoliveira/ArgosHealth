@@ -49,3 +49,22 @@ body{
     width: 100px;
     height: 28px;
 }
+
+.marginPadrao{
+    margin: 10px;
+}
+
+.marginPadrao2{
+    margin: 20px;
+}
+
+.centralizando{
+    text-align: center;
+}
+
+.botaoCadastrar{
+    background-color:#5ED0B7;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 10px 15px;
+}
