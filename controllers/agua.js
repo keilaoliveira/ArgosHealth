@@ -1,7 +1,8 @@
-module.exports.insertAgua = function(aaplication, req, res){
+module.exports.insertAgua = function(application, req, res){
     var dataForm = req.body;
     var conexao = application.servidor.connectionMysql;
-    var aguaD = application.models.aguaDAO(conexao);
-    aguaD.inserirAgua(dataForm);
-    res.redirect();
+    var userLog = req.session.usuario;
+    var aguaD = new application.models.aguaDAO(conexao);
+    aguaD.inserirAgua(dataForm, userLog);
+    res.redirect('/agua');
 }

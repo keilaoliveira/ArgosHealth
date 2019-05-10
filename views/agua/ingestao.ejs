@@ -43,6 +43,26 @@
         <!--Adicionar informações do banco-->
         <a href="/cadastrarAgua">Adicionar</a>
     </div>
+
+    <table>
+        <thead>
+            <tbody>
+                <%
+                    for(var i=0; i < data.length; i++){
+                %>
+                <tr>
+                    <td><%= data[i].dtConsumo %></td>
+                </tr>
+                <tr>
+                    <td><%= data[i].horarioAgua %><label>hrs</label></td>
+                    <td><%= data[i].qtdAgua %></td>
+                </tr>
+                <%
+                    }
+                %>
+            </tbody>
+        </thead>
+    </table>
 </body>
 
 </html>

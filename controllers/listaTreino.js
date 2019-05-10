@@ -1,4 +1,4 @@
-module.exports.listaExercicios = function(application, req, res){
+module.exports.viewExercicios = function(application, req, res){
     var conexao = application.servidor.connectionMysql;
     var userLog = req.session.usuario;
     var exerciciosD = new application.models.treinoDAO(conexao);
