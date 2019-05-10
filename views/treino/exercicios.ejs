@@ -1,25 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
 </head>
+
 <body>
-    <h2>Exercícios Físicos</h2>
-    <!--Adicionar informações do banco-->
+    <div class="menuSuperior">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Metas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/agua">Água</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/treino">Treino</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Sair</a>
+            </li>
+        </ul>
+    </div>
+    <br />
+    <h2 class="centralizando">Exercícios Físicos</h2>
+    <br />
 
-    <a href="/cadastrarTreino">Inserir Treino</a>
+    <div class="centralizando">
+        <h6> Inserir Treino</h6> <a href="/cadastrarTreino">
+            <img src="/img/treinoInserir.png" class="img-fluid imgCenter imgTabela" />
+        </a>
+    </div>
+    <br /><br />
 
-    <table>
-        <thead>
+    <div class="marginPadrao">
+        <table class="table table-hover table-sm">
+            <thead class="thead-light">
             <tbody>
                 <%
                     for(var i=0; i < data.length; i++){
                 %>
                 <tr>
-                    <td><%= data[i].exercicio %></td>
+                    <th scope="col"><%= data[i].exercicio %></th>
                 </tr>
                 <tr>
+                    <td>Séries</td>
+                    <td>Rep.</td>
+                    <td>Carga</td>
+                    <td>Inter.</td>
+                </tr>
+                <tr>
+
+
                     <td><%= data[i].series %></td>
                     <td><%= data[i].repeticoes %></td>
                     <td><%= data[i].carga %></td>
@@ -29,7 +68,9 @@
                     }
                 %>
             </tbody>
-        </thead>
-    </table>
+            </thead>
+        </table>
+    </div>
 </body>
+
 </html>
