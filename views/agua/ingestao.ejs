@@ -10,57 +10,57 @@
     <title>Ingestão de Água</title>
 
     <div class="menuSuperior">
-         <ul class="nav nav-pills">
+        <ul class="nav nav-pills">
             <li class="nav-item">
-               <a class="nav-link" href="/home">Home</a>
+                <a class="nav-link" href="/home">Home</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="/metas">Metas</a>
+                <a class="nav-link" href="/metas">Metas</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link active" href="/agua">Água</a>
+                <a class="nav-link active" href="/agua">Água</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link " href="/treino">Treino</a>
+                <a class="nav-link " href="/treino">Treino</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="/">Sair</a>
+                <a class="nav-link" href="/">Sair</a>
             </li>
-         </ul>
-      </div>
-      
+        </ul>
+    </div>
+
 </head>
 
 <body>
 
-   <div class="container">
-        <h2>Consumo de Água</h2><br /><br />
-        <div class="row">
-            <img src="/img/aguaImg.png" class="img-fluid imgCenter" />
-        </div>
-
+    <div class="container">
         <br />
-        <!--Adicionar informações do banco-->
-        <a href="/cadastrarAgua">Adicionar</a>
-    </div>
+        <h4 class="centralizando">Consumo de Água</h4><br /><br />
 
-    <table>
-        <thead>
-            <tbody>
-                <%
+        <h6 class="centralizando"> Inserir Consumo de Água</h6><br /> <a href="/cadastrarAgua">
+            <img src="/img/aguaImg.png" class="img-fluid imgCenter " />
+        </a>
+        <br />
+    </div>
+    <br />
+    
+    <table class="table table-hover table-sm">
+        <thead class="thead-light">
+        <tbody>
+            <%
                     for(var i=0; i < data.length; i++){
                 %>
-                <tr>
-                    <td><%= data[i].dtConsumo %></td>
-                </tr>
-                <tr>
-                    <td><%= data[i].horarioAgua %><label>hrs</label></td>
-                    <td><%= data[i].qtdAgua %></td>
-                </tr>
-                <%
+            <tr>
+                <th scope="col"><%= data[i].dtConsumo %></th>
+            </tr>
+            <tr>
+                <td><%= data[i].horarioAgua %><label>hrs</label></td>
+                <td><%= data[i].qtdAgua %></td>
+            </tr>
+            <%
                     }
                 %>
-            </tbody>
+        </tbody>
         </thead>
     </table>
 </body>

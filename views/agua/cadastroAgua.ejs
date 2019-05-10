@@ -2,59 +2,68 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/home.css">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="css/home.css">
+   <title>Document</title>
 
-    <div class="menuSuperior">
-         <ul class="nav nav-pills">
-            <li class="nav-item">
-               <a class="nav-link" href="/home">Home</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="/metas">Metas</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link active" href="/agua">Água</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link " href="/treino">Treino</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="/">Sair</a>
-            </li>
-         </ul>
-      </div>
+   <div class="menuSuperior">
+      <ul class="nav nav-pills">
+         <li class="nav-item">
+            <a class="nav-link" href="/home">Home</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/metas">Metas</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link active" href="/agua">Água</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link " href="/treino">Treino</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/">Sair</a>
+         </li>
+      </ul>
+   </div>
 
 </head>
 
 <body>
+   <br />
+   <div class="container">
+      <div class="row">
+         <div class="col">
+            <h5 class="centralizando">Informe os dados de consumo:</h5><br>
 
-    <form method="POST" action="/insereAgua">
-        <label>Escolha o horário para consumo:</label><br>
-        <select name="horarioAgua" id="horario">
-            <option value="09:00">09:00</option>
-            <option value="10:00">10:00</option>
-            <option value="11:00">11:00</option>
-            <option value="12:00">12:00</option>
-            <option value="13:00">13:00</option>
-        </select>
-        <br><br>
-        <label>Escolha o horário para consumo:</label><br>
-        <select name="qtdAgua" id="qtd">
-            <option value="100ml">100ml</option>
-            <option value="200ml">200ml</option>
-            <option value="300ml">300ml</option>
-            <option value="400ml">400ml</option>
-            <option value="500ml">500ml</option>
-        </select>
-        <br><br>
-        <button type="submit">Cadastrar</button>
-    </form>
-    <br><br>
+            <form method="POST" action="/insereAgua">
+               <div class="centralizando">
+                  <label>Escolha o horário para consumo:</label><br>
+                  <select name="horarioAgua" id="horario">
+                     <option value="09:00">09:00</option>
+                     <option value="10:00">10:00</option>
+                     <option value="11:00">11:00</option>
+                     <option value="12:00">12:00</option>
+                     <option value="13:00">13:00</option>
+                  </select>
+                  <br><br>
+                  <label>Escolha a quantidade ingerida:</label><br>
+                  <select name="qtdAgua" id="qtd">
+                     <option value="100ml">100ml</option>
+                     <option value="200ml">200ml</option>
+                     <option value="300ml">300ml</option>
+                     <option value="400ml">400ml</option>
+                     <option value="500ml">500ml</option>
+                  </select>
+                  <br /><br /><br />
+                  <button type="submit" class="botaoCadastrar">Cadastrar</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
 </body>
 
 </html>

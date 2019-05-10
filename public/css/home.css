@@ -63,8 +63,9 @@ body{
 }
 
 .botaoCadastrar{
-    background-color:#5ED0B7;
+    background-color:#007BFF;
     border: 1px solid #eee;
     border-radius: 6px;
     padding: 10px 15px;
+    color: #eee;
 }
