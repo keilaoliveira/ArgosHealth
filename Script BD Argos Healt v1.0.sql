@@ -58,7 +58,10 @@ create table qtdAgua(
 
 create table agua(
 	idAgua int primary key auto_increment,
-    dtConsumo varchar(10) not null
+    dtConsumo varchar(10) not null,
+    horarioAgua varchar(10) not null,
+    qtdAgua varchar(10) not null,
+    idPessoa varchar(50) not null
 );
 
 create table exercicio(
