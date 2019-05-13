@@ -10,42 +10,46 @@
     <title>Tabela de Nutrição</title>
 
     <div class="menuSuperior">
-            <ul class="nav nav-pills">
-               <li class="nav-item">
-                  <a class="nav-link" href="/home">Home</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="/metas">Metas</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="/agua">Água</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link " href="/treino">Treino</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="/">Sair</a>
-               </li>
-            </ul>
-         </div>
-         
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/metas">Metas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/agua">Água</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/treino">Treino</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Sair</a>
+            </li>
+        </ul>
+    </div>
+
 </head>
 
 <body>
-   
+
     <div class="container">
-        <h2>Tabela Nutricional</h2>
+
+        <br />
+        <h3 class="centralizando">Tabela Nutricional</h3>
+        <br />
 
         <img src="/img/tabela.png" class="img-fluid imgCenter imgTabela" />
+        <br />
 
-        <table>
-            <thead>
+        <table class="table table-hover table-sm">
+            <thead class="thead-light">
             <tbody>
                 <%
                     for(var i=0; i < dados.length; i++){
                 %>
                 <tr>
-                    <td><%= dados[i].descricao %></td>
+                    <th scope="col"><%= dados[i].descricao %></th>
                 </tr>
                 <tr>
                     <td><%= dados[i].calorias %><label> kcal /</label></td>
