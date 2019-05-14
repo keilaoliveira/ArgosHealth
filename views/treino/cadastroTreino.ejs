@@ -10,24 +10,24 @@
    <title>Document</title>
 
    <div class="menuSuperior">
-         <ul class="nav nav-pills">
-            <li class="nav-item">
-               <a class="nav-link" href="/home">Home</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="/metas">Metas</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="/agua">Água</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link active" href="/treino">Treino</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="/">Sair</a>
-            </li>
-         </ul>
-      </div>
+      <ul class="nav nav-pills">
+         <li class="nav-item">
+            <a class="nav-link" href="/home">Home</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/metas">Metas</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/agua">Água</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link active" href="/treino">Treino</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/">Sair</a>
+         </li>
+      </ul>
+   </div>
 
 </head>
 
@@ -40,39 +40,69 @@
 
             <form method="POST" action="/insereTreino">
                <div class="centralizando">
-               <label>Tipo de Treino: </label><br>
-               <select name="exercicio" id="ex">
-                  <option selected="true" disabled="disabled">...</option>
-                  <option value="Corrida">Corrida</option>
-                  <option value="Flexao">Flexão</option>
-               </select>
-               <br><br>
-               <label>Quantidade de Séries: </label><br>
-               <input type="number" name="series"><br><br>
-               <label>Quantidade de repetições: </label><br>
-               <input type="number" name="repeticoes"><br><br>
-               <label>Nível do Treino: </label><br>
-               <div>
-                  <input type="radio" id="tLeve" name="carga" value="leve">
-                  <label for="tLeve">Leve</label>
+                  <label>Tipo de Treino: </label><br>
+                  <select name="exercicio" id="ex" class="form-control">
+                     <option selected="true" disabled="disabled">...</option>
+                     <option value="Corrida">Corrida</option>
+                     <option value="Flexao">Flexão</option>
+                  </select>
+                  <br />
+
+                  <label>Quantidade de Séries: </label><br>
+                  <input type="number" name="series" class="form-control">
+                  <br />
+
+                  <label>Quantidade de repetições: </label><br>
+                  <input type="number" name="repeticoes" class="form-control">
+                  <br />
+
+                  <label>Nível do Treino: </label><br>
+                  <div class="col-6">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <div class="input-group-text">
+                           <input type="radio" id="tLeve" name="carga" value="leve"
+                              aria-label="Radio button for following text input">
+                        </div>
+                     </div>
+                     <input type="text" class="form-control" aria-label="Text input with radio button" value="Leve"
+                        readonly="true">
+                  </div>
                </div>
-               <div>
-                  <input type="radio" id="tMedio" name="carga" value="medio">
-                  <label for="tMedio">Médio</label>
+
+
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <div class="input-group-text">
+                           <input type="radio" id="tMedio" name="carga" value="medio"
+                              aria-label="Radio button for following text input">
+                        </div>
+                     </div>
+                     <input type="text" class="form-control" aria-label="Text input with radio button" value="Médio"
+                        readonly="true">
+                  </div>
+
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <div class="input-group-text">
+                           <input type="radio" id="tPesado" name="carga" value="pesado"
+                              aria-label="Radio button for following text input">
+                        </div>
+                     </div>
+                     <input type="text" class="form-control" aria-label="Text input with radio button" value="Pesado"
+                        readonly="true">
+                  </div>
+
+                  <label>Intervalo entre as séries: </label><br>
+                  <select name="intervalo" id="inte">
+                     <option selected="true" disabled="disabled">...</option>
+                     <option value="30 Seg">30 Segundos</option>
+                     <option value="1 Min">1 Minuto</option>
+                     <option value="2 Min">2 Minutos</option>
+                  </select>
+                  <br /><br />
+                  <button type="submit" class="botaoCadastrar">Cadastrar</button>
                </div>
-               <div>
-                  <input type="radio" id="tPesado" name="carga" value="pesado">
-                  <label for="tPesado">Pesado</label>
-               </div>
-               <label>Intervalo entre as séries: </label><br>
-               <select name="intervalo" id="inte">
-                  <option selected="true" disabled="disabled">...</option>
-                  <option value="30 Seg">30 Segundos</option>
-                  <option value="1 Min">1 Minuto</option>
-                  <option value="2 Min">2 Minutos</option>
-               </select>
-               <br /><br />
-               <button type="submit" class="botaoCadastrar">Cadastrar</button></div>
             </form>
 
          </div>

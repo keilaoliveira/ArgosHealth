@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -49,14 +49,16 @@
                     for(var i=0; i < dados.length; i++){
                 %>
                 <tr>
-                    <th scope="col"><%= dados[i].descricao %></th>
+                    <th scope="col" class="fonteTabela2"><%= dados[i].descricao %></th>
+                    <td></td>
+                    <td></td>
+                    <td ><a href="/exibiralimento/<%= dados[i].idAlimento %>"><img src="/img/Add.png" class="img-fluid imgCenter imgTabelaNutricao" /></a></td>
                 </tr>
                 <tr>
-                    <td><%= dados[i].calorias %><label> kcal /</label></td>
-                    <td><%= dados[i].carboidratos %><label>g carb /</label></td>
-                    <td><%= dados[i].proteinas %><label>g prot /</label></td>
-                    <td><%= dados[i].gordura %><label>g gord</label></td>
-                    <td><a href="/exibiralimento/<%= dados[i].idAlimento %>">Add</a></td>
+                    <td class= "fonteTabela"><%= dados[i].calorias %><label>&nbsp; kcal</label></td>
+                    <td class= "fonteTabela"><%= dados[i].carboidratos %><label>g carb/</label></td>
+                    <td class= "fonteTabela"><%= dados[i].proteinas %><label>g prot/</label></td>
+                    <td class= "fonteTabela"><%= dados[i].gordura %><label>g gord</label></td>
                 </tr>
                 <%
                     }
