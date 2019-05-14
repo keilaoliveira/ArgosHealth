@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+            function calcular(){
+                var n1 = parseInt(document.getElementById('nbrQuantidade').value, 10);
+                var n2 = (parseInt(document.getElementById('hdnCalorias').value, 10))*n1;
+                var n3 = (parseInt(document.getElementById('hdnCarboidratos').value, 10))*n1;
+                var n4 = (parseInt(document.getElementById('hdnProteinas').value, 10))*n1;
+                var n5 = (parseInt(document.getElementById('hdnGordura').value, 10))*n1;
+
+                document.getElementById("ttlCalorias").innerHTML = "Calorias";
+                document.getElementById("calorias").innerHTML = n2;
+                document.getElementById("ttlCarboidratos").innerHTML = "Carboidratos"
+                document.getElementById("carboidratos").innerHTML = n3;
+                document.getElementById("ttlProteinas").innerHTML = "Proteinas"
+                document.getElementById("proteinas").innerHTML = n4;
+                document.getElementById("ttlGordura").innerHTML = "Gordura"
+                document.getElementById("gordura").innerHTML = n5;
+            }
+    </script>
+
+</head>
+<body>
+    <form method="POST" action="/gravaMeta">
+        <%
+            dados.forEach(function(p){
+        %>
+        <label>Quantidade / Porção</label><br>
+        <input type="number" name="nbrQuantidade" id="nbrQuantidade"><br><br>
+        <label>Periodo</label><br>
+        <select name="periodo" id="periodo">
+            <option selected="true" disabled="disabled">...</option>
+            <option value="cafeManha">Café da Manhã</option>
+            <option value="almoco">Almoço</option>
+            <option value="lancheTarde">Lanche da Tarde</option>
+            <option value="janta">Janta</option>
+        </select>
+        <br><br>
+        <label>Alimento</label><br>
+        <input type="text" name="txtAlimento" value="<%= p.descricao %>"><br><br>
+        <input type="button" name="btnCalcular" value="Calcular" onclick="calcular()">
+        <br><br>
+        <div id="ttlCalorias"></div>
+        <div id="calorias"></div>
+        <div id="ttlCarboidratos"></div>
+        <div id="carboidratos"></div>
+        <div id="ttlProteinas"></div>
+        <div id="proteinas"></div>
+        <div id="ttlGordura"></div>
+        <div id="gordura"></div>
+        <input type="submit" value="Confirmar">
+        <input type="hidden" name="hdnCalorias" id="hdnCalorias" value="<%= p.calorias %>"><br><br><br>
+        <input type="hidden" name="hdnCarboidratos" id="hdnCarboidratos" value="<%= p.carboidratos %>"><br><br>
+        <input type="hidden" name="hdnProteinas" id="hdnProteinas" value="<%= p.proteinas %>"><br><br>
+        <input type="hidden" name="hdnGordura" id="hdnGordura" value="<%= p.gordura %>"><br><br>
+        <%
+            });
+        %> 
+    
+
+    </form>
+</body>
+</html>
