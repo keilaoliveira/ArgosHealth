@@ -76,39 +76,6 @@
         <div class="row">
             <div class="col">
                 <form method="POST" action="/gravaMeta">
-<<<<<<< HEAD
-        <%
-            dados.forEach(function(p){
-        %>
-        <label>Quantidade / Porção</label><br>
-        <input type="number" name="qtdMeta" id="nbrQuantidade" required="true"><br><br>
-        <label>Periodo</label><br>
-        <select name="periodo" id="periodo">
-            <option selected="true" disabled="disabled">...</option>
-            <option value="cafeManha">Café da Manhã</option>
-            <option value="almoco">Almoço</option>
-            <option value="lancheTarde">Lanche da Tarde</option>
-            <option value="janta">Janta</option>
-        </select>
-        <br><br>
-        <label>Alimento</label><br>
-        <input type="text" name="descricao" value="<%= p.descricao %>"><br><br>
-        <input type="button" name="btnCalcular" value="Calcular" onclick="calcular()">
-        <br><br>
-        <div id="ttlCalorias"></div>
-        <div id="calorias" name="calorias"></div>
-        <div id="ttlCarboidratos"></div>
-        <div id="carboidratos"></div>
-        <div id="ttlProteinas"></div>
-        <div id="proteinas"></div>
-        <div id="ttlGordura"></div>
-        <div id="gordura"></div>
-        <input type="submit" value="Confirmar">
-        <input type="hidden" name="hdnCalorias" id="hdnCalorias" value="<%= p.calorias %>"><br><br><br>
-        <input type="hidden" name="hdnCarboidratos" id="hdnCarboidratos" value="<%= p.carboidratos %>"><br><br>
-        <input type="hidden" name="hdnProteinas" id="hdnProteinas" value="<%= p.proteinas %>"><br><br>
-        <input type="hidden" name="hdnGordura" id="hdnGordura" value="<%= p.gordura %>"><br><br>
-=======
 
                     <%
             dados.forEach(function(p){
@@ -122,7 +89,6 @@
                                 readonly="true"><br />
                         </div>
                     </div>
->>>>>>> 702b2aa70062401a825dea7cd98086bc7978e19b
 
                     <div class="row">
                         <div class="col-12">
@@ -131,8 +97,8 @@
                                 <thead class="thead-light">
                                 <tbody>
                                     <%
-                                        for(var i=0; i < dados.length; i++){
-                                    %>
+                                                for(var i=0; i < dados.length; i++){
+                                            %>
                                     <tr>
                                         <td class="textoTabela">Unidade</td>
                                     </tr>
@@ -143,13 +109,8 @@
                                         <td class="textoTabela"><%= dados[i].gordura %><label>g gord</label></td>
                                     </tr>
                                     <%
-<<<<<<< HEAD
-                                        }
-                                    %>
-=======
                                                 };
                                             %>
->>>>>>> 702b2aa70062401a825dea7cd98086bc7978e19b
                                 </tbody>
                                 </thead>
                             </table>
@@ -190,8 +151,8 @@
                                     <thead class="thead-light">
                                     <tbody>
                                         <%
-                                            for(var i=0; i < dados.length; i++){
-                                        %>
+                                                    for(var i=0; i < dados.length; i++){
+                                                %>
                                         <tr>
                                             <td class="textoTabela">Unidade</td>
                                         </tr>
@@ -210,13 +171,8 @@
                                             </td>
                                         </tr>
                                         <%
-<<<<<<< HEAD
-                                            }
-                                        %>
-=======
                                                     };
                                                 %>
->>>>>>> 702b2aa70062401a825dea7cd98086bc7978e19b
                                     </tbody>
                                     </thead>
                                 </table>
@@ -239,7 +195,7 @@
                     <input type="hidden" name="hdnCalorias" id="hdnCalorias" value="<%= p.calorias %>">
                     <input type="hidden" name="hdnProteinas" id="hdnProteinas" value="<%= p.proteinas %>"><br />
                     <input type="hidden" name="hdnGordura" id="hdnGordura" value="<%= p.gordura %>"><br />
-        <%
+                    <%
             });
         %>
                 </form>
