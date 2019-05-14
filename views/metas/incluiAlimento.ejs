@@ -76,6 +76,7 @@
         <div class="row">
             <div class="col">
                 <form method="POST" action="/gravaMeta">
+<<<<<<< HEAD
         <%
             dados.forEach(function(p){
         %>
@@ -107,6 +108,21 @@
         <input type="hidden" name="hdnCarboidratos" id="hdnCarboidratos" value="<%= p.carboidratos %>"><br><br>
         <input type="hidden" name="hdnProteinas" id="hdnProteinas" value="<%= p.proteinas %>"><br><br>
         <input type="hidden" name="hdnGordura" id="hdnGordura" value="<%= p.gordura %>"><br><br>
+=======
+
+                    <%
+            dados.forEach(function(p){
+        %>
+
+
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Alimento</label><br>
+                            <input type="text" name="descricao" value="<%= p.descricao %>" class="form-control"
+                                readonly="true"><br />
+                        </div>
+                    </div>
+>>>>>>> 702b2aa70062401a825dea7cd98086bc7978e19b
 
                     <div class="row">
                         <div class="col-12">
@@ -127,8 +143,13 @@
                                         <td class="textoTabela"><%= dados[i].gordura %><label>g gord</label></td>
                                     </tr>
                                     <%
+<<<<<<< HEAD
                                         }
                                     %>
+=======
+                                                };
+                                            %>
+>>>>>>> 702b2aa70062401a825dea7cd98086bc7978e19b
                                 </tbody>
                                 </thead>
                             </table>
@@ -189,8 +210,13 @@
                                             </td>
                                         </tr>
                                         <%
+<<<<<<< HEAD
                                             }
                                         %>
+=======
+                                                    };
+                                                %>
+>>>>>>> 702b2aa70062401a825dea7cd98086bc7978e19b
                                     </tbody>
                                     </thead>
                                 </table>
@@ -202,8 +228,8 @@
                     <br />
 
                     <div class="centralizando">
-                        <input type="button" id="btnCalcular2" name="btnCalcular2" value="Recalcular" onclick="calcular()"
-                            class="btn btn-secondary btnCadastrar">
+                        <input type="button" id="btnCalcular2" name="btnCalcular2" value="Recalcular"
+                            onclick="calcular()" class="btn btn-secondary btnCadastrar">
 
                         <input type="submit" id="btnCadastrar" name="btnCadastrar" value="Confirmar"
                             class="btnCadastrar btn btn-secondary centralizando">
