@@ -76,43 +76,12 @@
         <div class="row">
             <div class="col">
                 <form method="POST" action="/gravaMeta">
+
                     <%
             dados.forEach(function(p){
         %>
-<<<<<<< HEAD
-        <label>Quantidade / Porção</label><br>
-        <input type="number" name="qtdMeta" id="nbrQuantidade" required="true"><br><br>
-        <label>Periodo</label><br>
-        <select name="periodo" id="periodo">
-            <option selected="true" disabled="disabled">...</option>
-            <option value="cafeManha">Café da Manhã</option>
-            <option value="almoco">Almoço</option>
-            <option value="lancheTarde">Lanche da Tarde</option>
-            <option value="janta">Janta</option>
-        </select>
-        <br><br>
-        <label>Alimento</label><br>
-        <input type="text" name="descricao" value="<%= p.descricao %>"><br><br>
-        <input type="button" name="btnCalcular" value="Calcular" onclick="calcular()">
-        <br><br>
-        <div id="ttlCalorias"></div>
-        <div id="calorias" name="calorias"></div>
-        <div id="ttlCarboidratos"></div>
-        <div id="carboidratos"></div>
-        <div id="ttlProteinas"></div>
-        <div id="proteinas"></div>
-        <div id="ttlGordura"></div>
-        <div id="gordura"></div>
-        <input type="submit" value="Confirmar">
-        <input type="hidden" name="hdnCalorias" id="hdnCalorias" value="<%= p.calorias %>"><br><br><br>
-        <input type="hidden" name="hdnCarboidratos" id="hdnCarboidratos" value="<%= p.carboidratos %>"><br><br>
-        <input type="hidden" name="hdnProteinas" id="hdnProteinas" value="<%= p.proteinas %>"><br><br>
-        <input type="hidden" name="hdnGordura" id="hdnGordura" value="<%= p.gordura %>"><br><br>
-        <%
-            });
-        %> 
-    
-=======
+
+
                     <div class="row">
                         <div class="col-12">
                             <label>Alimento</label><br>
@@ -120,7 +89,6 @@
                                 readonly="true"><br />
                         </div>
                     </div>
->>>>>>> dcbe6c32a74fa760994db8728afa562ebbbd5044
 
                     <div class="row">
                         <div class="col-12">
@@ -141,7 +109,7 @@
                                         <td class="textoTabela"><%= dados[i].gordura %><label>g gord</label></td>
                                     </tr>
                                     <%
-                                                }
+                                                };
                                             %>
                                 </tbody>
                                 </thead>
@@ -203,7 +171,7 @@
                                             </td>
                                         </tr>
                                         <%
-                                                    }
+                                                    };
                                                 %>
                                     </tbody>
                                     </thead>
@@ -216,8 +184,8 @@
                     <br />
 
                     <div class="centralizando">
-                        <input type="button" id="btnCalcular2" name="btnCalcular2" value="Recalcular" onclick="calcular()"
-                            class="btn btn-secondary btnCadastrar">
+                        <input type="button" id="btnCalcular2" name="btnCalcular2" value="Recalcular"
+                            onclick="calcular()" class="btn btn-secondary btnCadastrar">
 
                         <input type="submit" id="btnCadastrar" name="btnCadastrar" value="Confirmar"
                             class="btnCadastrar btn btn-secondary centralizando">
