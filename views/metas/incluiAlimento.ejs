@@ -32,7 +32,7 @@
             dados.forEach(function(p){
         %>
         <label>Quantidade / Porção</label><br>
-        <input type="number" name="nbrQuantidade" id="nbrQuantidade"><br><br>
+        <input type="number" name="qtdMeta" id="nbrQuantidade" required="true"><br><br>
         <label>Periodo</label><br>
         <select name="periodo" id="periodo">
             <option selected="true" disabled="disabled">...</option>
@@ -43,7 +43,7 @@
         </select>
         <br><br>
         <label>Alimento</label><br>
-        <input type="text" name="txtAlimento" value="<%= p.descricao %>"><br><br>
+        <input type="text" name="descricao" value="<%= p.descricao %>"><br><br>
         <input type="button" name="btnCalcular" value="Calcular" onclick="calcular()">
         <br><br>
         <div id="ttlCalorias"></div>
