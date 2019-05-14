@@ -8,9 +8,45 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/home.css">
     <title>Document</title>
+
+    <script language="JavaScript">
+        function mascara(t, mask) {
+            var i = t.value.length;
+            var saida = mask.substring(1, 0);
+            var texto = mask.substring(i)
+            if (texto.substring(0, 1) != saida) {
+                t.value += texto.substring(0, 1);
+            }
+        }
+
+        function validacaoEmail(field) {
+            usuario = field.value.substring(0, field.value.indexOf("@"));
+            dominio = field.value.substring(field.value.indexOf("@") + 1, field.value.length);
+
+            if ((usuario.length >= 1) &&
+                (dominio.length >= 3) &&
+                (usuario.search("@") == -1) &&
+                (dominio.search("@") == -1) &&
+                (usuario.search(" ") == -1) &&
+                (dominio.search(" ") == -1) &&
+                (dominio.search(".") != -1) &&
+                (dominio.indexOf(".") >= 1) &&
+                (dominio.lastIndexOf(".") < dominio.length - 1)) {
+                /*document.getElementById("msgemail").innerHTML = "E-mail válido";*/
+            }
+            else {
+                document.getElementById("msgemail").innerHTML = "<font color='red'>E-mail inválido </font>";
+              
+                alert("E-mail invalido");
+            }
+        }
+    </script>
+
 </head>
 
 <body>
+
+
 
     <div class="menuSuperior">
         <ul class="nav nav-pills">
@@ -21,7 +57,7 @@
     </div>
     <br />
     <div class="container">
-        <img src="/img/Logo_Argos.png" class="img-fluid imgCenter" />
+        <img src="/img/Logo_Argos.png" class="img-fluid imgCenter imgCadastro" />
         <br />
         <i> Seja muito bem vindo!</i>
         <i> Venha fazer parte do nosso clube e adquirir hábitos mais saudáveis!</i>
@@ -29,29 +65,53 @@
 
         <div class="row">
             <div class="col">
-                <form method="POST" action="/insereUsuario" class="textCenter">
-                    <label>Nome</label><br>
-                    <input type="text" name="nomePessoa">
+                <form method="POST" action="/insereUsuario" class="textCenter" name="f1">
+                    <label>Nome Completo</label><br>
+                    <input type="text" class="form-control" required="true" name="nomePessoa">
                     <br><br>
-                    <label>Data de Nascimento</label><br>
-                    <input type="text" name="dtNascimento">
-                    <br><br>
-                    <label>Numero de Celular</label><br>
-                    <input type="text" name="numCelular">
-                    <br><br>
-                    <label>Peso</label><br>
-                    <input type="text" name="peso">
-                    <br><br>
-                    <label>Altura</label><br>
-                    <input type="text" name="altura">
-                    <br><br>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Data de Nasc.</label><br>
+                            <input type="date" class="form-control" required="true" name="dtNascimento">
+                            <br><br>
+                        </div>
+
+                        <div class="col-6">
+                            <label>Numero de Celular</label><br>
+                            <input type="text" class="form-control" required="true"
+                                onkeypress="mascara(this, '## ####-####')" maxlength="13" name="numCelular">
+                            <br><br>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Peso</label><br>
+                            <input type="text" class="form-control" required="true" name="peso">
+                            <br><br>
+                        </div>
+
+                        <div class="col-6">
+                            <label>Altura</label><br>
+                            <input type="text" class="form-control" required="true" name="altura">
+                            <br><br>
+                        </div>
+                    </div>
+
                     <label>Email</label><br>
-                    <input type="text" name="email">
+                    <input type="email" class="form-control" required="true" name="email"
+                        onblur="validacaoEmail(f1.email)" maxlength="60">
+                    <div id="msgemail"></div>
                     <br><br>
                     <label>Senha</label><br>
-                    <input type="password" name="senha">
+                    <input type="password" class="form-control" required="true" name="senha">
                     <br /><br />
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit" class="btn btn-info">Cadastrar</button> &nbsp; &nbsp; &nbsp;
+                    <button type="reset" class="btn btn-warning">Limpar</button>
                 </form>
                 <br /><br />
             </div>
