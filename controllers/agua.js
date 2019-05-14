@@ -5,4 +5,5 @@ module.exports.insertAgua = function(application, req, res){
     var aguaD = new application.models.aguaDAO(conexao);
     aguaD.inserirAgua(dataForm, userLog);
     res.redirect('/agua');
+    location.reload();
 }
