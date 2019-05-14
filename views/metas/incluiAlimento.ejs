@@ -1,36 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
     <title>Document</title>
 
-    <script>
-            function calcular(){
-                var n1 = parseInt(document.getElementById('nbrQuantidade').value, 10);
-                var n2 = (parseInt(document.getElementById('hdnCalorias').value, 10))*n1;
-                var n3 = (parseInt(document.getElementById('hdnCarboidratos').value, 10))*n1;
-                var n4 = (parseInt(document.getElementById('hdnProteinas').value, 10))*n1;
-                var n5 = (parseInt(document.getElementById('hdnGordura').value, 10))*n1;
+    <div class="menuSuperior">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/metas">Metas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/agua">Água</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/treino">Treino</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Sair</a>
+            </li>
+        </ul>
+    </div>
 
-                document.getElementById("ttlCalorias").innerHTML = "Calorias";
-                document.getElementById("calorias").innerHTML = n2;
-                document.getElementById("ttlCarboidratos").innerHTML = "Carboidratos"
-                document.getElementById("carboidratos").innerHTML = n3;
-                document.getElementById("ttlProteinas").innerHTML = "Proteinas"
-                document.getElementById("proteinas").innerHTML = n4;
-                document.getElementById("ttlGordura").innerHTML = "Gordura"
-                document.getElementById("gordura").innerHTML = n5;
+
+    <script>
+        function calcular() {
+            var n1 = parseInt(document.getElementById('nbrQuantidade').value, 10);
+            var n2 = (parseInt(document.getElementById('hdnCalorias').value, 10)) * n1;
+            var n3 = (parseInt(document.getElementById('hdnCarboidratos').value, 10)) * n1;
+            var n4 = (parseInt(document.getElementById('hdnProteinas').value, 10)) * n1;
+            var n5 = (parseInt(document.getElementById('hdnGordura').value, 10)) * n1;
+
+            document.getElementById("calorias").innerHTML = n2;
+            document.getElementById("carboidratos").innerHTML = n3;
+            document.getElementById("proteinas").innerHTML = n4;
+            document.getElementById("gordura").innerHTML = n5;
+
+            if (n1 > 0) {
+                document.getElementById("tabelaSoma").style.visibility = "visible";
+            } else {
+                alert('Insira a quantidade antes de calcular');
             }
+        }
+
+
+        function exibirBtnConfirmar() {
+            var n1 = parseInt(document.getElementById('nbrQuantidade').value, 10);
+            if (n1 > 0) {
+                document.getElementById("btnCadastrar").style.visibility = "visible";
+                document.getElementById("btnCalcular").style.visibility = "hidden";
+                document.getElementById("btnCalcular2").style.visibility = "visible";
+            } else {
+
+            }
+        }
+
+
     </script>
 
 </head>
+
 <body>
-    <form method="POST" action="/gravaMeta">
-        <%
+    <div class="container">
+
+        <br />
+        <h4 class="centralizando">Inclusão de Refeição</h4>
+        <br />
+        <div class="row">
+            <div class="col">
+                <form method="POST" action="/gravaMeta">
+                    <%
             dados.forEach(function(p){
         %>
+<<<<<<< HEAD
         <label>Quantidade / Porção</label><br>
         <input type="number" name="qtdMeta" id="nbrQuantidade" required="true"><br><br>
         <label>Periodo</label><br>
@@ -63,7 +112,128 @@
             });
         %> 
     
+=======
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Alimento</label><br>
+                            <input type="text" name="descricao" value="<%= p.descricao %>" class="form-control"
+                                readonly="true"><br />
+                        </div>
+                    </div>
+>>>>>>> dcbe6c32a74fa760994db8728afa562ebbbd5044
 
-    </form>
+                    <div class="row">
+                        <div class="col-12">
+
+                            <table class="table table-hover table-sm">
+                                <thead class="thead-light">
+                                <tbody>
+                                    <%
+                                                for(var i=0; i < dados.length; i++){
+                                            %>
+                                    <tr>
+                                        <td class="textoTabela">Unidade</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="textoTabela"><%= dados[i].calorias %><label>&nbsp; kcal</label></td>
+                                        <td class="textoTabela"><%= dados[i].carboidratos %><label>g carb/</label></td>
+                                        <td class="textoTabela"><%= dados[i].proteinas %><label>g prot/</label></td>
+                                        <td class="textoTabela"><%= dados[i].gordura %><label>g gord</label></td>
+                                    </tr>
+                                    <%
+                                                }
+                                            %>
+                                </tbody>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5">
+                            <label>Qtd / Porção</label><br>
+                            <input type="number" name="qtdMeta" id="nbrQuantidade" required="true"
+                                class="form-control"><br />
+                        </div>
+
+                        <div class="col-7">
+                            <label>Periodo</label><br>
+                            <select name="periodo" id="periodo" class="form-control">
+                                <option selected="true" disabled="disabled">...</option>
+                                <option value="cafeManha">Café da Manhã</option>
+                                <option value="almoco">Almoço</option>
+                                <option value="lancheTarde">Lanche da Tarde</option>
+                                <option value="janta">Janta</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col centralizando">
+                            <input type="button" id="btnCalcular" name="btnCalcular" value="Calcular"
+                                onclick="calcular();exibirBtnConfirmar()" class="btn btn-secondary">
+                        </div>
+                    </div>
+
+                    <div id="tabelaSoma" class="btnCadastrar tabelaSoma">
+                        <div class="row">
+                            <div class="col-12">
+
+                                <table class="table table-hover table-sm">
+                                    <thead class="thead-light">
+                                    <tbody>
+                                        <%
+                                                    for(var i=0; i < dados.length; i++){
+                                                %>
+                                        <tr>
+                                            <td class="textoTabela">Unidade</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="textoTabela">
+                                                <div id="calorias"></div><label>&nbsp; kcal</label>
+                                            </td>
+                                            <td class="textoTabela">
+                                                <div id="carboidratos"></div><label>g carb/</label>
+                                            </td>
+                                            <td class="textoTabela">
+                                                <div id="proteinas"></div><label>g prot/</label>
+                                            </td>
+                                            <td class="textoTabela">
+                                                <div id="gordura"></div><label>g gord</label>
+                                            </td>
+                                        </tr>
+                                        <%
+                                                    }
+                                                %>
+                                    </tbody>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <br />
+
+                    <div class="centralizando">
+                        <input type="button" id="btnCalcular2" name="btnCalcular2" value="Recalcular" onclick="calcular()"
+                            class="btn btn-secondary btnCadastrar">
+
+                        <input type="submit" id="btnCadastrar" name="btnCadastrar" value="Confirmar"
+                            class="btnCadastrar btn btn-secondary centralizando">
+
+                    </div>
+                    <input type="hidden" name="hdnCarboidratos" id="hdnCarboidratos" value="<%= p.carboidratos %>">
+                    <input type="hidden" name="hdnCalorias" id="hdnCalorias" value="<%= p.calorias %>">
+                    <input type="hidden" name="hdnProteinas" id="hdnProteinas" value="<%= p.proteinas %>"><br />
+                    <input type="hidden" name="hdnGordura" id="hdnGordura" value="<%= p.gordura %>"><br />
+                    <%
+            });
+        %>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

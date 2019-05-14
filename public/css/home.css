@@ -73,3 +73,35 @@ body{
 .imgCadastro{
     width: 75%;
 }
+
+.fonteTabela{
+    font-size: 15px;
+}
+
+.fonteTabela2{
+    font-size: 14px;
+}
+
+.imgTabelaNutricao{
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+
+.inputPersol{
+    border: 0px;
+    background-color: transparent;
+}
+
+.textoTabela{
+    font-size: 13px;
+    font-style: italic;
+}
+
+.btnCadastrar{
+    visibility: hidden;
+}
+
+.tabelaSoma{
+    background-color: #BBDDE8;
+}
