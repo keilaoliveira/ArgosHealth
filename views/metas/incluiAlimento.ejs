@@ -45,11 +45,11 @@
 
             if (n1 > 0) {
                 document.getElementById("tabelaSoma").style.visibility = "visible";
+                
             } else {
                 alert('Insira a quantidade antes de calcular');
             }
         }
-
 
         function exibirBtnConfirmar() {
             var n1 = parseInt(document.getElementById('nbrQuantidade').value, 10);
@@ -61,7 +61,6 @@
 
             }
         }
-
 
     </script>
 
@@ -75,17 +74,17 @@
         <br />
         <div class="row">
             <div class="col">
-                <form method="POST" action="/gravaMeta">
 
-                    <%
-            dados.forEach(function(p){
-        %>
+                <%
+                    dados.forEach(function(p){
+                %>
 
+                <form method="POST" action="/gravarMeta">
 
                     <div class="row">
                         <div class="col-12">
                             <label>Alimento</label><br>
-                            <input type="text" name="descricao" value="<%= p.descricao %>" class="form-control"
+                            <input type="text" name="alimento" value="<%= p.descricao %>" class="form-control"
                                 readonly="true"><br />
                         </div>
                     </div>
@@ -96,21 +95,15 @@
                             <table class="table table-hover table-sm">
                                 <thead class="thead-light">
                                 <tbody>
-                                    <%
-                                                for(var i=0; i < dados.length; i++){
-                                            %>
                                     <tr>
                                         <td class="textoTabela">Unidade</td>
                                     </tr>
                                     <tr>
-                                        <td class="textoTabela"><%= dados[i].calorias %><label>&nbsp; kcal</label></td>
-                                        <td class="textoTabela"><%= dados[i].carboidratos %><label>g carb/</label></td>
-                                        <td class="textoTabela"><%= dados[i].proteinas %><label>g prot/</label></td>
-                                        <td class="textoTabela"><%= dados[i].gordura %><label>g gord</label></td>
+                                        <td class="textoTabela"><%= p.calorias %><label>&nbsp; kcal</label></td>
+                                        <td class="textoTabela"><%= p.carboidratos %><label>g carb/</label></td>
+                                        <td class="textoTabela"><%= p.proteinas %><label>g prot/</label></td>
+                                        <td class="textoTabela"><%= p.gordura %><label>g gord</label></td>
                                     </tr>
-                                    <%
-                                                };
-                                            %>
                                 </tbody>
                                 </thead>
                             </table>
@@ -120,7 +113,7 @@
                     <div class="row">
                         <div class="col-5">
                             <label>Qtd / Porção</label><br>
-                            <input type="number" name="qtdMeta" id="nbrQuantidade" required="true"
+                            <input type="number" name="qtdRefeicao" id="nbrQuantidade" required="true"
                                 class="form-control"><br />
                         </div>
 
@@ -150,11 +143,8 @@
                                 <table class="table table-hover table-sm">
                                     <thead class="thead-light">
                                     <tbody>
-                                        <%
-                                                    for(var i=0; i < dados.length; i++){
-                                                %>
                                         <tr>
-                                            <td class="textoTabela">Unidade</td>
+                                            <td class="textoTabela">Valor total</td>
                                         </tr>
                                         <tr>
                                             <td class="textoTabela">
@@ -170,16 +160,12 @@
                                                 <div id="gordura"></div><label>g gord</label>
                                             </td>
                                         </tr>
-                                        <%
-                                                    };
-                                                %>
                                     </tbody>
                                     </thead>
                                 </table>
                             </div>
                         </div>
                     </div>
-
 
                     <br />
 
@@ -191,14 +177,14 @@
                             class="btnCadastrar btn btn-secondary centralizando">
 
                     </div>
-                    <input type="hidden" name="hdnCarboidratos" id="hdnCarboidratos" value="<%= p.carboidratos %>">
-                    <input type="hidden" name="hdnCalorias" id="hdnCalorias" value="<%= p.calorias %>">
-                    <input type="hidden" name="hdnProteinas" id="hdnProteinas" value="<%= p.proteinas %>"><br />
-                    <input type="hidden" name="hdnGordura" id="hdnGordura" value="<%= p.gordura %>"><br />
-                    <%
+                    <input type="text" name="carboidratos" id="hdnCarboidratos" value="<%= p.carboidratos %>" class="btnCadastrar">
+                    <input type="text" name="calorias" id="hdnCalorias" value="<%= p.calorias %>" class="btnCadastrar">
+                    <input type="text" name="proteinas" id="hdnProteinas" value="<%= p.proteinas %>" class="btnCadastrar"><br />
+                    <input type="text" name="gordura" id="hdnGordura" value="<%= p.gordura %>" class="btnCadastrar"><br />
+                </form>
+                <%
             });
         %>
-                </form>
             </div>
         </div>
     </div>

@@ -69,6 +69,25 @@ create table exercicio(
     descricao varchar(45) not null
 );
 
+create table refeicao(
+    idRefeicao int primary key auto_increment,
+	alimento varchar(30) not null,
+	qtdRefeicao int(3) not null,
+	periodo varchar(30) not null,
+    idPessoa varchar(50) not null
+);
+
+CREATE VIEW exibirRefeicaoPessoa AS 
+		select r.*, 
+		   (r.qtdRefeicao * a.calorias) caloriasTotal, 
+           (r.qtdRefeicao * a.carboidratos) carboidratosTotal,
+           (r.qtdRefeicao * a.proteinas) proteinasTotal,
+           (r.qtdRefeicao * a.gordura) gorduraTotal
+    from 	refeicao as r,
+			alimento as a
+            where r.alimento = a.descricao;
+;
+
 --alter table login add f_idPessoa int;
 --alter table login add constraint fkLoginPessoa foreign key (f_idPessoa) references pessoa(idPessoa);
 

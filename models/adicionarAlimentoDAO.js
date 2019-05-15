@@ -7,7 +7,8 @@ adicionarAlimentoDAO.prototype.exibirAlimento = function(idAlimento, callback){
 }
 
 adicionarAlimentoDAO.prototype.inserirAlimento = function(dados, userLog){
-    console.log(dados.calorias);
+    this._conexao.query('insert into refeicao(alimento, qtdRefeicao, periodo, idPessoa) values("'+
+        dados.alimento+'",'+dados.qtdRefeicao+',"'+dados.periodo+'","'+userLog+'")')
 }
 
 module.exports = function(){
