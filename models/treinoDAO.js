@@ -1,4 +1,4 @@
-function treinoDAO(conexao, userLog){
+function treinoDAO(conexao){
     this._conexao = conexao();
     //this.userLog
 }

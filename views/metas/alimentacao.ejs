@@ -40,7 +40,31 @@
          <img src="/img/icone-nutricao.png" class="img-fluid imgCenter" />
       </div>
 
+      <table>
+         <thead>
+            <tbody>
+               <%
+                  for(var i=0; i < data.length; i++){
+               %>
+               <tr>
+                  <td><%= data[i].periodo %></td>
+               </tr>
+               <tr>
+                  <td><%= data[i].alimento %></td>
+                  <td><%= data[i].caloriasTotal %><label>&nbsp; kcal</label></td>
+                  <td><%= data[i].carboidratosTotal %><label>g carb</label></td>
+                  <td><%= data[i].proteinasTotal %><label>g prot</label></td>
+                  <td><%= data[i].gorduraTotal %><label>g gord</label></td>
+               </tr>
+               <%
+                  };
+               %>
+         </tbody>
+         </thead>
+      </table>
 
+
+      <br><br><br><br>
       Café da manhã<br>
       Lanche da manhã<br>
       Almoço<br>
