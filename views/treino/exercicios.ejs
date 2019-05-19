@@ -50,21 +50,21 @@
                     for(var i=0; i < data.length; i++){
                 %>
                 <tr>
-                    <th scope="col"><%= data[i].exercicio %></th>
+                    <th scope="col" class="tituloTabelaPersol"><%= data[i].exercicio %></th>
                 </tr>
                 <tr>
-                    <td>Séries</td>
-                    <td>Rep.</td>
-                    <td>Carga</td>
-                    <td>Inter.</td>
+                    <td class= "fonteTabela">Séries</td>
+                    <td class= "fonteTabela">Rep.</td>
+                    <td class= "fonteTabela">Carga</td>
+                    <td class= "fonteTabela">Inter.</td>
                 </tr>
                 <tr>
 
 
-                    <td><%= data[i].series %></td>
-                    <td><%= data[i].repeticoes %></td>
-                    <td><%= data[i].carga %></td>
-                    <td><%= data[i].intervalo %></td>
+                    <td class= "fonteTabela"><%= data[i].series %></td>
+                    <td class= "fonteTabela"><%= data[i].repeticoes %></td>
+                    <td class= "fonteTabela"><%= data[i].carga %></td>
+                    <td class= "fonteTabela"><%= data[i].intervalo %></td>
                 </tr>
                 <%
                     }

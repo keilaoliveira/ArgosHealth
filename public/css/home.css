@@ -105,3 +105,15 @@ body{
 .tabelaSoma{
     background-color: #BBDDE8;
 }
+
+.textoDescricao{
+    font-size: 13px;
+    font-style: italic;
+    color: #B0B0B0;
+}
+
+.tituloTabelaPersol{
+    color: #46BEC2;
+    font-weight: bold;
+    font-size: 13px;
+}

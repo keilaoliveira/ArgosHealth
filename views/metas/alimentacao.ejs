@@ -39,22 +39,26 @@
       <div class="row">
          <img src="/img/icone-nutricao.png" class="img-fluid imgCenter" />
       </div>
+      <br />
 
-      <table>
-         <thead>
+      <label class="textoDescricao">Para inserir dados nessa seção deverá navegar pelo menu da tabela nutricional e adicionar os alimentos.</label>
+      <br /><br />
+
+      <table class="table table-hover table-sm">
+         <thead class="thead-light">
             <tbody>
                <%
                   for(var i=0; i < data.length; i++){
                %>
                <tr>
-                  <td><%= data[i].periodo %></td>
+                  <td scope="col" class="tituloTabelaPersol"><%= data[i].periodo %></td>
                </tr>
                <tr>
-                  <td><%= data[i].alimento %></td>
-                  <td><%= data[i].caloriasTotal %><label>&nbsp; kcal</label></td>
-                  <td><%= data[i].carboidratosTotal %><label>g carb</label></td>
-                  <td><%= data[i].proteinasTotal %><label>g prot</label></td>
-                  <td><%= data[i].gorduraTotal %><label>g gord</label></td>
+                  <td class= "fonteTabela"><%= data[i].alimento %></td>
+                  <td class= "fonteTabela"><%= data[i].caloriasTotal %><label>&nbsp; kcal</label></td>
+                  <td class= "fonteTabela"><%= data[i].carboidratosTotal %><label>g carb</label></td>
+                  <td class= "fonteTabela"><%= data[i].proteinasTotal %><label>g prot</label></td>
+                  <td class= "fonteTabela"><%= data[i].gorduraTotal %><label>g gord</label></td>
                </tr>
                <%
                   };
@@ -63,16 +67,7 @@
          </thead>
       </table>
 
-
-      <br><br><br><br>
-      Café da manhã<br>
-      Lanche da manhã<br>
-      Almoço<br>
-      Lanche da tarde<br>
-      Jantar<br>
-
    </div>
-   <!--Adicionar informações do banco-->
 </body>
 
 </html>
